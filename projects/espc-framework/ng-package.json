@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/espc-framework",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "lodash": "_",
+      "ngx-webstorage": "ngxWebstorage",
+      "@auth0/angular-jwt": "angularJwt"
+    }
+  }
+}

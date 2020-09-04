@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "espc-framework": {
+      "projectType": "library",
+      "root": "projects/espc-framework",
+      "sourceRoot": "projects/espc-framework/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/espc-framework/tsconfig.lib.json",
+            "project": "projects/espc-framework/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/espc-framework/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/espc-framework/src/test.ts",
+            "tsConfig": "projects/espc-framework/tsconfig.spec.json",
+            "karmaConfig": "projects/espc-framework/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/espc-framework/tsconfig.lib.json",
+              "projects/espc-framework/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "espc-core"
 }
