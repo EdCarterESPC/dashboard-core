@@ -53,7 +53,7 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
                             //     .switchMap(() => of(err)).asObservable();
                         }
                         else {
-                            console.log('REFRESH INIT FPR ', request);
+                            console.log('REFRESH INIT FOR ', request);
                             this.refreshTokenInProgress = true;
                             this.http.get(this.refreshUrl + '?token=' + this.refreshToken).subscribe((i) => {
                                 this.refreshTokenInProgress = false;
